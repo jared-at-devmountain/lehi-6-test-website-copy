@@ -1,4 +1,4 @@
-import { sequelize, Thing } from '../models/model'
+import { sequelize, Thing } from '../models/model.js'
 
 const newThings = [
     {

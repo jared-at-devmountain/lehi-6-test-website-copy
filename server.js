@@ -9,7 +9,7 @@ app.use(express.json())
 app.get('/stuff', async (req, res) => {
     let allThings = await Thing.findAll()
     
-    res.send(allThings)
+    res.send(allThings.map((obj) => obj.name))
 })
 
 ViteExpress.listen(app, 4000, () => {
