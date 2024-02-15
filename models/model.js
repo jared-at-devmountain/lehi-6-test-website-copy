@@ -1,6 +1,10 @@
 import Sequelize, { DataTypes, Model } from 'sequelize'
+import dotenv from 'dotenv'
 
-const sequelize = new Sequelize('postgresql:///test_db')
+dotenv.config()
+let DB_URL = process.env.DB_URL
+
+const sequelize = new Sequelize(DB_URL)
 
 class Thing extends Model {}
 

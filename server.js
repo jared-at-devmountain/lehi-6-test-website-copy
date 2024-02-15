@@ -1,6 +1,10 @@
 import express from 'express'
 import ViteExpress from 'vite-express'
 import { Thing } from './models/model.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
+let PORT = process.env.PORT
 
 let app = express()
 
@@ -12,6 +16,6 @@ app.get('/stuff', async (req, res) => {
     res.send(allThings.map((obj) => obj.name))
 })
 
-ViteExpress.listen(app, 4000, () => {
-    console.log('working on 4000')
+ViteExpress.listen(app, PORT, () => {
+    console.log('working on ' + PORT)
 })
